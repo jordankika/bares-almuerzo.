@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {"darkMode": "class", "theme": {"extend": {"colors": {"primary-container": "#bd5630", "on-primary-fixed": "#390c00", "error": "#ba1a1a", "outline-variant": "#ddc0b7", "error-container": "#ffdad6", "on-surface": "#161c28", "on-secondary-fixed-variant": "#004881", "outline": "#8a726a", "surface-container-high": "#e3e8f9", "inverse-on-surface": "#edf0ff", "surface-dim": "#d5daeb", "secondary-container": "#7db6ff", "surface-tint": "#a0401c", "inverse-surface": "#2b303d", "on-primary-container": "#fffbff", "on-error": "#ffffff", "on-secondary": "#ffffff", "primary": "#9d3e1a", "on-surface-variant": "#56423c", "on-secondary-fixed": "#001c38", "surface-container-low": "#f1f3ff", "secondary": "#1960a3", "on-background": "#161c28", "tertiary": "#00666b", "inverse-primary": "#ffb59c", "on-primary-fixed-variant": "#802a05", "sun-sand": "#FDFBF7", "on-tertiary-fixed": "#002022", "on-primary": "#ffffff", "secondary-fixed": "#d3e4ff", "med-blue": "#2B6CB0", "on-secondary-container": "#00477f", "secondary-fixed-dim": "#a2c9ff", "background": "#f9f9ff", "surface-bright": "#f9f9ff", "tertiary-fixed-dim": "#64d7de", "on-tertiary-fixed-variant": "#004f53", "primary-fixed": "#ffdbcf", "surface": "#f9f9ff", "tertiary-fixed": "#83f4fb", "on-tertiary": "#ffffff", "olive-accent": "#557A46", "surface-variant": "#dde2f3", "terracotta": "#D96B43", "on-tertiary-container": "#f4ffff", "surface-container-lowest": "#ffffff", "on-error-container": "#93000a", "surface-container": "#e9edff", "surface-container-highest": "#dde2f3", "primary-fixed-dim": "#ffb59c", "tertiary-container": "#008187"}, "borderRadius": {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"}, "spacing": {"space-xl": "2.5rem", "space-md": "1rem", "space-sm": "0.5rem", "space-xs": "0.25rem", "space-lg": "1.5rem", "margin": "2rem", "gutter": "1.5rem"}, "fontFamily": {"body-md": ["Inter"], "body-lg": ["Inter"], "body-sm": ["Inter"], "label-sm": ["Plus Jakarta Sans"], "headline-xl": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"]}, "fontSize": {"body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}], "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}], "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}], "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}], "headline-xl": ["40px", {"lineHeight": "48px", "fontWeight": "700"}], "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}], "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "600"}], "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}]}}}};</script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Plus+Jakarta+Sans:wght@100..900&display=swap" rel="stylesheet"/></head><body class="bg-background font-body-md text-on-surface"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-low z-50 flex flex-col pt-space-xl pb-space-xl"><div class="px-space-lg mb-space-lg flex items-center gap-space-sm"><img alt="ValènciaAlmuerzo Logo" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALIzqzloT0_6_93xB3ywmO5iUE3mY4hSRfUVu8M2LkGGwZbzquZI4lo096J5igz-ufkuzOB4tyogwkrqNCoDdg_nYYlWt6key0USkka1rhOboZxjBAjQN2Pj5r_7_xjtMNAUd1unGqL377bcIDd-4q3PDMiS71h6FS1QOffD1CPUpCS5LPbs_eJDCqHDV59hiWCrM03Km8mVpPZISxGRXa1laPIc08h-YolpV2FuA"/><span class="font-headline-md text-primary">Almuerzos</span></div><nav class="flex-1 px-space-md space-y-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-bold"><a aria-current="page" class="flex items-center px-space-md py-space-sm rounded-xl transition-all bg-primary-container text-on-primary-container font-bold" data-path="dashboard" href="#"><span class="material-symbols-outlined mr-space-md">dashboard</span>Dashboard</a><a class="flex items-center px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="almuerzo-chat" href="#"><span class="material-symbols-outlined mr-space-md">chat</span>AI Chat Guide</a><a class="flex items-center px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="directory" href="#"><span class="material-symbols-outlined mr-space-md">restaurant</span>Venues</a></nav></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-lg"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-on-surface-variant">search</span><input class="bg-transparent text-on-surface placeholder:text-on-surface-variant outline-none text-body-sm w-64" placeholder="Search bars, <em>bocadillos</em>..." type="text"/></div><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-on-surface">notifications</span><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="relative pt-16 bg-background min-h-screen"><div class="flex flex-col w-full min-h-[calc(100vh-4rem)] bg-background">
+<div class="grid grid-cols-1 lg:grid-cols-12 flex-1 w-full relative overflow-hidden">
+<!-- LEFT PANEL: Chat, Filters & Restaurant Feed (7 cols on desktop) -->
+<div class="lg:col-span-7 flex flex-col h-[calc(100vh-4rem)] overflow-y-auto px-space-md lg:px-space-xl py-space-lg gap-space-lg">
+<!-- HERO / BANNER -->
+<div class="relative rounded-2xl overflow-hidden p-space-lg text-on-primary-container bg-primary-container shadow-xl">
+<div class="absolute inset-0 bg-cover bg-center opacity-25" data-alt="Vibrant Valencian terrace under warm Mediterranean sun with golden hour lighting, bustling tables enjoying traditional almuerzo bocadillos, crisp local wine, and rustic wooden styling." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDkt0Gf_aW-qWWLT1-S0wRZVYdW6inol9KLRfOgZes_ke7okHR0RJU-nfnLG6O0fZXZjy1cYmQNXZpCIJofrUVl-iak-anrFDsZVBUiFgOnLaScIg3JJN7mibgtoIGMRFiZmPuGLXq26tybjU0zC2T_p3keV32uUnmn0QCUko9iSPZeSreuecbo981cIScjLkTYgontxcc2R1OvuIh4N0_uWVpsofXpiww6dAHr9DM')"></div>
+<div class="relative z-10 flex flex-col gap-space-xs">
+<span class="label-sm tracking-widest uppercase text-inverse-primary">Ruta del Almuerzo</span>
+<h1 class="headline-lg text-on-primary-container">Descubre el auténtico <em>esmorzar</em> valenciano</h1>
+<p class="body-md text-surface-container-low max-w-lg mt-space-xs">
+            Desde el bocadillo de caballo con ajos tiernos hasta la alta cocina de arroz. Tu guía inteligente en València.
+          </p>
+</div>
+</div>
+<!-- AI CHAT ASSISTANT BOX -->
+<div class="bg-surface rounded-2xl p-space-md shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined text-[18px]">smart_toy</span>
+</div>
+<span class="label-md text-on-surface">Asistente Virtual d'Almuerzos</span>
+</div>
+<span class="label-sm text-olive-accent font-semibold flex items-center gap-1" id="chat-status">
+<span class="w-2 h-2 rounded-full bg-olive-accent inline-block animate-pulse"></span> Activo
+          </span>
+</div>
+<div class="flex flex-col gap-space-sm max-h-48 overflow-y-auto pr-space-xs text-body-sm" id="chat-messages">
+<div class="bg-surface-container p-space-sm rounded-xl text-on-surface self-start max-w-[85%]">
+            ¡Hola! Dime qué te apetece hoy. Por ejemplo: <em>"Quiero un almuerzo tradicional en Ruzafa"</em> o <em>"Paella cerca de la Ciudad de las Artes por menos de 15€"</em>.
+          </div>
+</div>
+<!-- Chat Input & Quick Suggestions -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex gap-space-xs">
+<input class="flex-1 bg-surface-container-low text-on-surface px-space-md py-space-sm rounded-xl outline-none text-body-sm focus:ring-1 focus:ring-primary transition-all" id="ai-chat-input" placeholder="Escribe tu antojo..." type="text"/>
+<button class="bg-primary text-on-primary px-space-md py-space-sm rounded-xl label-md hover:bg-primary-container transition-all flex items-center justify-center" id="ai-send-btn">
+<span class="material-symbols-outlined text-[18px]">send</span>
+</button>
+</div>
+<div class="flex flex-wrap gap-2 pt-1" id="quick-queries">
+<button class="bg-surface-container hover:bg-surface-container-high px-3 py-1 rounded-full text-xs text-on-surface-variant transition-all" onclick="setQuery('Almuerzo valenciano tradicional en El Carmen')">Almuerzo en El Carmen</button>
+<button class="bg-surface-container hover:bg-surface-container-high px-3 py-1 rounded-full text-xs text-on-surface-variant transition-all" onclick="setQuery('Arroz y paella por menos de 20 euros')">Paella económico</button>
+<button class="bg-surface-container hover:bg-surface-container-high px-3 py-1 rounded-full text-xs text-on-surface-variant transition-all" onclick="setQuery('Terraza en Ruzafa con buena valoración')">Ruzafa terraza</button>
+</div>
+</div>
+<!-- Search History (LocalStorage) -->
+<div class="border-t border-surface-container-highest pt-space-sm mt-1">
+<div class="flex items-center justify-between mb-1">
+<span class="label-sm text-on-surface-variant uppercase tracking-wider">Últimas búsquedas</span>
+<button class="text-xs text-primary hover:underline" onclick="clearHistory()">Limpiar</button>
+</div>
+<div class="flex flex-wrap gap-1.5" id="history-list">
+<!-- Populated via JS -->
+</div>
+</div>
+</div>
+<!-- MANUAL FILTERS BAR -->
+<div class="flex flex-col gap-space-sm bg-surface rounded-2xl p-space-md shadow-sm">
+<div class="flex items-center justify-between">
+<span class="label-md text-on-surface">Filtros Activos</span>
+<button class="text-xs text-primary hover:underline font-semibold" onclick="resetFilters()">Restablecer</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<div class="flex flex-col gap-1">
+<label class="label-sm text-on-surface-variant">Precio Máximo: <span class="font-bold text-primary" id="val-price">25€</span></label>
+<input class="accent-primary cursor-pointer" id="filter-price" max="40" min="5" oninput="applyManualFilters()" step="5" type="range" value="25"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="label-sm text-on-surface-variant">Distancia máx: <span class="font-bold text-primary" id="val-dist">5 km</span></label>
+<input class="accent-primary cursor-pointer" id="filter-dist" max="10" min="0.5" oninput="applyManualFilters()" step="0.5" type="range" value="5"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="label-sm text-on-surface-variant">Valoración mínima</label>
+<select class="bg-surface-container-low text-on-surface text-body-sm rounded-xl px-2 py-1.5 outline-none" id="filter-rating" onchange="applyManualFilters()">
+<option value="0">Todas las valoraciones</option>
+<option value="4.5">★ 4.5 o más</option>
+<option value="4.8">★ 4.8 o más</option>
+</select>
+</div>
+</div>
+<div class="flex flex-wrap gap-2 pt-2">
+<button class="category-chip bg-primary text-on-primary px-3 py-1.5 rounded-xl label-sm transition-all" onclick="filterCategory('todos')">Todos</button>
+<button class="category-chip bg-surface-container hover:bg-surface-container-high text-on-surface px-3 py-1.5 rounded-xl label-sm transition-all" onclick="filterCategory('Tradicional')">Tradicional</button>
+<button class="category-chip bg-surface-container hover:bg-surface-container-high text-on-surface px-3 py-1.5 rounded-xl label-sm transition-all" onclick="filterCategory('Tapas')">Tapas</button>
+<button class="category-chip bg-surface-container hover:bg-surface-container-high text-on-surface px-3 py-1.5 rounded-xl label-sm transition-all" onclick="filterCategory('Arrocería')">Arrocería</button>
+<button class="category-chip bg-surface-container hover:bg-surface-container-high text-on-surface px-3 py-1.5 rounded-xl label-sm transition-all" onclick="filterCategory('Japonesa')">Japonesa</button>
+</div>
+</div>
+<!-- RESTAURANT CARDS FEED -->
+<div class="flex flex-col gap-space-md pb-space-xl">
+<div class="flex items-center justify-between">
+<h2 class="headline-md text-on-surface">Restaurantes & Almuerzos (<span id="result-count">20</span>)</h2>
+<span class="text-body-sm text-on-surface-variant">Ordenados por cercanía</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md" id="restaurant-grid">
+<!-- Injected via JS -->
+</div>
+</div>
+</div>
+<!-- RIGHT PANEL: Interactive Map & Route Finder (5 cols on desktop) -->
+<div class="lg:col-span-5 h-[calc(100vh-4rem)] sticky top-16 bg-surface-container-low flex flex-col">
+<!-- MAP HEADER CONTROLS -->
+<div class="p-space-md bg-surface border-b border-surface-container-highest flex items-center justify-between z-10 shadow-sm">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary">map</span>
+<div>
+<h3 class="label-md text-on-surface">Mapa Interactivo València</h3>
+<p class="text-xs text-on-surface-variant">Centro: Plaça de l'Ajuntament</p>
+</div>
+</div>
+<button class="bg-surface-container hover:bg-surface-container-high px-3 py-1.5 rounded-xl text-xs font-semibold text-on-surface transition-all" onclick="resetMapView()">
+          Centrar Vista
+        </button>
+</div>
+<!-- MAP CONTAINER SIMULATION -->
+<div class="flex-1 relative overflow-hidden bg-surface-container flex items-center justify-center" data-alt="High-resolution aerial vector map illustration of Valencia showing the Turia gardens, Ciutat Vella historic center, Ruzafa district, and Mediterranean coastline with glowing interactive location pins." data-location="Plaza del Ayuntamiento, Valencia" id="map-canvas" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBWRNEc7bNRTS6p-clOFtd5nHLSNNgeK77Utbyp6EMyWe8sqpqJF3FPNR1J3NqyCyboenarT7dxz49MFoze1anpHSXfd3U9v9qGxq23kJCy1ovi4zjSJftchMrULHg-gbzJYkyrxI8-YTTy7S2Y9of1kKjquFR_lmhA0wF6sHFkU6TofoAOFtEGhpjqu3aQ-cjP64AfDD4llkyrkkvsl5rcU0zY4afg7uoRddWu4Ic')">
+<!-- Simulated Map Pins Overlay -->
+<div class="absolute inset-0 pointer-events-none" id="map-pins-container">
+<!-- Dynamically injected pins positioned around the map canvas -->
+</div>
+<!-- Floating Route Assistant Card over Map -->
+<div class="absolute bottom-4 left-4 right-4 bg-surface/90 backdrop-blur-md rounded-2xl p-space-md shadow-lg border border-surface-container-highest pointer-events-auto flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="label-md text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-tertiary text-[18px]">navigation</span> ValenRuta GPS
+            </span>
+<span class="text-xs font-bold text-primary bg-primary-fixed px-2 py-0.5 rounded-full" id="route-duration">Selecciona un local</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<input class="flex-1 bg-surface-container-low text-on-surface px-3 py-2 rounded-xl text-body-sm outline-none" id="route-destination-input" placeholder="Selecciona un restaurante del listado..." readonly="" type="text"/>
+<button class="bg-med-blue text-on-secondary px-4 py-2 rounded-xl label-md opacity-50 cursor-not-allowed transition-all flex items-center gap-1" disabled="" id="open-maps-btn" onclick="openGoogleMapsRoute()">
+<span class="material-symbols-outlined text-[16px]">directions</span> Cómo llegar
+            </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- RESTAURANT DETAIL MODAL -->
+<div class="fixed inset-0 bg-inverse-surface/60 backdrop-blur-sm z-50 flex items-center justify-center p-space-md opacity-0 pointer-events-none transition-all duration-300" id="restaurant-modal">
+<div class="bg-surface rounded-2xl max-w-lg w-full overflow-hidden shadow-2xl transform scale-95 transition-all duration-300 flex flex-col max-h-[90vh]" id="modal-content-box">
+<!-- Modal Header Image -->
+<div class="relative h-48 bg-cover bg-center" data-alt="Close up gourmet shot of authentic Valencian almuerzo bocadillo with jamón reserva, fresh tomato pulp, and virgin olive oil on crusty artisan bread." id="modal-img" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDE3MjwhNwBPzyRqglE0sxBkPzVxbLetIu3545yqJnWIWoSqPt8RpNRTtqCkM4D4d0K4ld1DbXveFSlO0pkT-XsrA8CqRaxv689xDpAOpQk1t17tyLShL622neSiFDPbHYrfcBfLT3YxP1OjG4iESGj1UKQsac7FIAXDCTUpnQ0RivG-jQpoEIGfPVWllRvDm5Dq1Q7szu3yNC2Le6iXEziRYRcqKe5FDRGcahLcFs')">
+<button class="absolute top-3 right-3 w-8 h-8 rounded-full bg-surface/80 backdrop-blur-md flex items-center justify-center text-on-surface hover:bg-surface transition-all" onclick="closeModal()">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+<div class="absolute bottom-3 left-3 bg-primary text-on-primary px-3 py-1 rounded-full label-sm" id="modal-tag">Tradicional</div>
+</div>
+<!-- Modal Body -->
+<div class="p-space-lg flex flex-col gap-space-md overflow-y-auto">
+<div>
+<h3 class="headline-md text-on-surface" id="modal-name">Nombre del Local</h3>
+<p class="text-body-sm text-on-surface-variant flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[16px]">location_on</span> <span id="modal-neighborhood">Barrio</span> (<span id="modal-dist">1.2 km</span>)
+          </p>
+</div>
+<div class="grid grid-cols-2 gap-space-sm bg-surface-container-low p-space-md rounded-xl">
+<div class="flex flex-col">
+<span class="label-sm text-on-surface-variant">Valoración</span>
+<span class="label-md text-on-surface flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span> <span id="modal-rating">4.8</span>
+</span>
+</div>
+<div class="flex flex-col">
+<span class="label-sm text-on-surface-variant">Precio estimado</span>
+<span class="label-md text-on-surface mt-0.5" id="modal-price">12 € / pers</span>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<span class="label-sm text-on-surface-variant">Horario de Esmorzar</span>
+<p class="body-sm text-on-surface" id="modal-hours">Lunes a Domingo: 08:00 - 12:30</p>
+</div>
+<div class="flex flex-col gap-1">
+<span class="label-sm text-on-surface-variant">Especialidad recomendada</span>
+<p class="body-sm text-on-surface font-semibold text-primary" id="modal-specialty">Bocadillo de sepia con ajos tiernos y mayonesa casera.</p>
+</div>
+<div class="flex items-center justify-between pt-space-sm border-t border-surface-container-highest">
+<span class="text-body-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">phone</span> <span id="modal-phone">+34 963 000 000</span>
+</span>
+<button class="bg-primary text-on-primary px-4 py-2 rounded-xl label-md hover:bg-primary-container transition-all flex items-center gap-1" id="modal-route-btn" onclick="">
+<span class="material-symbols-outlined text-[16px]">directions</span> Cómo llegar
+          </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Dataset of 20 authentic Valencia venues
+  const restaurants = [
+    { id: 1, name: "Bar Central (Mercat Central)", neighborhood: "Ciutat Vella", type: "Tradicional", price: 10, dist: 0.4, rating: 4.9, specialty: "Bocadillo de calamares y carajillo quemado", hours: "07:30 - 14:00", phone: "+34 963 123 456", coords: {x: 48, y: 52} },
+    { id: 2, name: "La Pascuala", neighborhood: "El Cabanyal", type: "Tradicional", price: 12, dist: 3.8, rating: 4.8, specialty: "Bocadillo 'Caballito de Mar' de carne de caballo", hours: "08:00 - 13:00", phone: "+34 963 711 507", coords: {x: 82, y: 35} },
+    { id: 3, name: "Central Bar by Ricard Camarena", neighborhood: "Mercat Central", type: "Tapas", price: 15, dist: 0.5, rating: 4.9, specialty: "Bocadillo Ricard Camarena con lomo y ajos", hours: "08:00 - 15:30", phone: "+34 963 821 865", coords: {x: 47, y: 53} },
+    { id: 4, name: "Kiosko La Pérgola", neighborhood: "Paseo de la Alameda", type: "Tradicional", price: 9, dist: 1.5, rating: 4.7, specialty: "El Bombón: lomo, queso, champiñones y mayonesa", hours: "08:00 - 16:00", phone: "+34 963 613 254", coords: {x: 65, y: 40} },
+    { id: 5, name: "Cafetería Nou Esmorzaret", neighborhood: "Ruzafa", type: "Tradicional", price: 11, dist: 1.2, rating: 4.8, specialty: "Chivito valenciano en pan de hogaza", hours: "08:30 - 13:30", phone: "+34 963 222 111", coords: {x: 55, y: 70} },
+    { id: 6, name: "Restaurante Casa Carmela", neighborhood: "Malvarrosa", type: "Arrocería", price: 28, dist: 4.5, rating: 4.9, specialty: "Paella valenciana tradicional a leña", hours: "13:00 - 16:00", phone: "+34 963 710 073", coords: {x: 90, y: 25} },
+    { id: 7, name: "Alquería del Pou", neighborhood: "Ciudad de las Artes", type: "Arrocería", price: 24, dist: 2.8, rating: 4.8, specialty: "Arroz senyoret y pato con setas", hours: "13:00 - 16:30", phone: "+34 962 064 681", coords: {x: 75, y: 80} },
+    { id: 8, name: "Bar Marvi", neighborhood: "Albors", type: "Tapas", price: 10, dist: 2.1, rating: 4.9, specialty: "Tortilla de patatas casera y sepia plancha", hours: "08:00 - 16:00", phone: "+34 963 318 412", coords: {x: 70, y: 55} },
+    { id: 9, name: "Bodega Fila", neighborhood: "El Carmen", type: "Tradicional", price: 12, dist: 0.8, rating: 4.7, specialty: "Blanco y negro con habas", hours: "08:30 - 15:00", phone: "+34 963 917 289", coords: {x: 40, y: 42} },
+    { id: 10, name: "Nomad Sushi & Bar", neighborhood: "Ruzafa", type: "Japonesa", price: 22, dist: 1.3, rating: 4.6, specialty: "Fusión de almuerzo asiático y bao de panceta", hours: "13:30 - 16:00", phone: "+34 963 444 555", coords: {x: 57, y: 68} },
+    { id: 11, name: "Restaurante Navarro", neighborhood: "Centro", type: "Tradicional", price: 20, dist: 0.6, rating: 4.8, specialty: "Tapas de autor y guisos valencianos", hours: "13:00 - 16:00", phone: "+34 963 515 268", coords: {x: 50, y: 48} },
+    { id: 12, name: "Cervecería El Tossal", neighborhood: "El Carmen", type: "Tapas", price: 13, dist: 0.7, rating: 4.6, specialty: "Patatas bravas y montaditos variados", hours: "09:00 - 23:00", phone: "+34 963 912 345", coords: {x: 42, y: 45} },
+    { id: 13, name: "Pizzería Da Fasio", neighborhood: "Cánovas", type: "Italiana", price: 16, dist: 1.4, rating: 4.7, specialty: "Focaccia artesana con embutido italiano y valenciano", hours: "13:00 - 16:00", phone: "+34 963 888 999", coords: {x: 60, y: 45} },
+    { id: 14, name: "Bar Torino", neighborhood: "Mestalla", type: "Tradicional", price: 9, dist: 2.0, rating: 4.7, specialty: "Carne de caballo con patatas a lo pobre", hours: "07:30 - 15:00", phone: "+34 963 692 111", coords: {x: 68, y: 48} },
+    { id: 15, name: "Restaurante Nou Rodat", neighborhood: "El Cabanyal", type: "Arrocería", price: 26, dist: 3.9, rating: 4.8, specialty: "Arroz al horno tradicional en cazuela de barro", hours: "13:00 - 16:00", phone: "+34 963 714 848", coords: {x: 84, y: 33} },
+    { id: 16, name: "Mercat Bar", neighborhood: "Ruzafa", type: "Tapas", price: 18, dist: 1.2, rating: 4.7, specialty: "Tapas creativas de mercado", hours: "13:00 - 16:00", phone: "+34 963 510 900", coords: {x: 56, y: 72} },
+    { id: 17, name: "Laripa Almuerzos", neighborhood: "Patraix", type: "Tradicional", price: 10, dist: 2.5, rating: 4.8, specialty: "Bocadillo especial Patraix con ajos tiernos", hours: "08:00 - 13:00", phone: "+34 963 555 666", coords: {x: 30, y: 75} },
+    { id: 18, name: "Kiosco Alameda", neighborhood: "Paseo de la Alameda", type: "Tradicional", price: 9, dist: 1.6, rating: 4.6, specialty: "Bocadillo de calamares con salsa tártara", hours: "08:00 - 16:00", phone: "+34 963 600 700", coords: {x: 66, y: 42} },
+    { id: 19, name: "Ramen Kuma", neighborhood: "Universidad", type: "Japonesa", price: 14, dist: 1.1, rating: 4.7, specialty: "Ramen caldo tonkotsu y gyozas caseras", hours: "13:30 - 16:00", phone: "+34 963 111 222", coords: {x: 48, y: 38} },
+    { id: 20, name: "Casa Montaña", neighborhood: "El Cabanyal", type: "Tapas", price: 22, dist: 3.7, rating: 4.9, specialty: "Habitas con jamón y clóchinas de temporada", hours: "13:00 - 16:00", phone: "+34 963 672 314", coords: {x: 83, y: 36} }
+  ];
+
+  let activeCategory = 'todos';
+  let searchHistory = JSON.parse(localStorage.getItem('valencia_almuerzo_history')) || ['Almuerzo en Ruzafa', 'Paella Ciudad de las Artes', 'Bar Central'];
+
+  // Initialize UI
+  document.addEventListener('DOMContentLoaded', () => {
+    renderRestaurants(restaurants);
+    renderMapPins(restaurants);
+    renderHistory();
+
+    // AI Chat Input listener
+    const chatInput = document.getElementById('ai-chat-input');
+    chatInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') handleChatSubmit();
+    });
+    document.getElementById('ai-send-btn').addEventListener('click', handleChatSubmit);
+  });
+
+  function renderRestaurants(list) {
+    const grid = document.getElementById('restaurant-grid');
+    document.getElementById('result-count').innerText = list.length;
+    
+    if (list.length === 0) {
+      grid.innerHTML = `<div class="col-span-2 text-center py-space-xl text-on-surface-variant bg-surface rounded-2xl p-space-lg">No se han encontrado restaurantes con estos filtros. Prueba a ampliar el precio o la distancia.</div>`;
+      return;
+    }
+
+    grid.innerHTML = list.map(r => `
+      <div onclick="selectRestaurant(${r.id})" class="bg-surface rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all cursor-pointer flex flex-col group">
+        <div class="h-36 bg-cover bg-center relative" style="background-image: url('placeholder')" data-alt="Gastronomic photo of ${r.name}, showing delicious ${r.specialty} served in ${r.neighborhood} Valencia with sunny Mediterranean ambiance.">
+          <div class="absolute top-3 left-3 bg-surface/90 backdrop-blur-md px-2.5 py-1 rounded-full text-xs font-semibold text-on-surface">
+            ${r.type}
+          </div>
+          <div class="absolute bottom-3 right-3 bg-surface/90 backdrop-blur-md px-2.5 py-1 rounded-full text-xs font-bold text-primary flex items-center gap-1">
+            <span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span> ${r.rating}
+          </div>
+        </div>
+        <div class="p-space-md flex flex-col gap-1.5 flex-1 justify-between">
+          <div>
+            <div class="flex items-center justify-between">
+              <h4 class="label-md text-on-surface group-hover:text-primary transition-colors">${r.name}</h4>
+              <span class="text-xs font-semibold text-primary">~${r.price}€</span>
+            </div>
+            <p class="text-xs text-on-surface-variant flex items-center gap-1 mt-0.5">
+              <span class="material-symbols-outlined text-[14px]">location_on</span> ${r.neighborhood} · ${r.dist} km
+            </p>
+          </div>
+          <p class="body-sm text-on-surface-variant line-clamp-1 italic mt-1">"${r.specialty}"</p>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  function renderMapPins(list) {
+    const container = document.getElementById('map-pins-container');
+    container.innerHTML = list.map(r => `
+      <div onclick="event.stopPropagation(); selectRestaurant(${r.id})" class="absolute transform -translate-x-1/2 -translate-y-1/2 cursor-pointer pointer-events-auto group transition-transform hover:scale-125" style="left: ${r.coords.x}%; top: ${r.coords.y}%;">
+        <div class="bg-primary text-on-primary px-2 py-1 rounded-full shadow-lg text-[10px] font-bold flex items-center gap-1 border border-on-primary/20">
+          <span class="material-symbols-outlined text-[12px]">restaurant</span> ${r.name.split(' ')[0]}
+        </div>
+      </div>
+    `).join('');
+  }
+
+  function renderHistory() {
+    const list = document.getElementById('history-list');
+    list.innerHTML = searchHistory.map(h => `
+      <button onclick="setQueryFromHistory('${h}')" class="bg-surface-container hover:bg-surface-container-high px-2.5 py-1 rounded-lg text-xs text-on-surface transition-all">${h}</button>
+    `).join('');
+  }
+
+  function setQuery(text) {
+    document.getElementById('ai-chat-input').value = text;
+    handleChatSubmit();
+  }
+
+  function setQueryFromHistory(text) {
+    document.getElementById('ai-chat-input').value = text;
+    handleChatSubmit();
+  }
+
+  function clearHistory() {
+    searchHistory = [];
+    localStorage.removeItem('valencia_almuerzo_history');
+    renderHistory();
+  }
+
+  let selectedRestaurantObj = null;
+
+  function selectRestaurant(id) {
+    const r = restaurants.find(item => item.id === id);
+    if (!r) return;
+    selectedRestaurantObj = r;
+
+    // Update Route Panel
+    document.getElementById('route-destination-input').value = `${r.name} (${r.neighborhood})`;
+    document.getElementById('route-duration').innerText = `~${Math.round(r.dist * 4 + 5)} min en bici / pie`;
+    const openBtn = document.getElementById('open-maps-btn');
+    openBtn.disabled = false;
+    openBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+
+    // Open Modal
+    document.getElementById('modal-name').innerText = r.name;
+    document.getElementById('modal-neighborhood').innerText = r.neighborhood;
+    document.getElementById('modal-dist').innerText = `${r.dist} km`;
+    document.getElementById('modal-rating').innerText = r.rating;
+    document.getElementById('modal-price').innerText = `${r.price} € / pers`;
+    document.getElementById('modal-hours').innerText = r.hours;
+    document.getElementById('modal-specialty').innerText = r.specialty;
+    document.getElementById('modal-phone').innerText = r.phone;
+    document.getElementById('modal-tag').innerText = r.type;
+    
+    const routeBtn = document.getElementById('modal-route-btn');
+    routeBtn.setAttribute('onclick', `openGoogleMapsRoute()`);
+
+    const modal = document.getElementById('restaurant-modal');
+    modal.classList.remove('opacity-0', 'pointer-events-none');
+    modal.querySelector('#modal-content-box').classList.remove('scale-95');
+    modal.querySelector('#modal-content-box').classList.add('scale-100');
+  }
+
+  function closeModal() {
+    const modal = document.getElementById('restaurant-modal');
+    modal.classList.add('opacity-0', 'pointer-events-none');
+    modal.querySelector('#modal-content-box').classList.remove('scale-100');
+    modal.querySelector('#modal-content-box').classList.add('scale-95');
+  }
+
+  function openGoogleMapsRoute() {
+    if (!selectedRestaurantObj) return;
+    const query = encodeURIComponent(`${selectedRestaurantObj.name}, ${selectedRestaurantObj.neighborhood}, Valencia`);
+    window.open(`https://www.google.com/maps/search/?api=1&query=${query}`, '_blank');
+  }
+
+  function resetMapView() {
+    // Visual feedback for map recenter
+    const canvas = document.getElementById('map-canvas');
+    canvas.classList.add('ring-2', 'ring-primary');
+    setTimeout(() => canvas.classList.remove('ring-2', 'ring-primary'), 500);
+  }
+
+  function handleChatSubmit() {
+    const input = document.getElementById('ai-chat-input');
+    const text = input.value.trim();
+    if (!text) return;
+
+    // Add to history
+    if (!searchHistory.includes(text)) {
+      searchHistory.unshift(text);
+      if (searchHistory.length > 5) searchHistory.pop();
+      localStorage.setItem('valencia_almuerzo_history', JSON.stringify(searchHistory));
+      renderHistory();
+    }
+
+    // Append user message
+    const chatContainer = document.getElementById('chat-messages');
+    chatContainer.innerHTML += `
+      <div class="bg-primary text-on-primary p-space-sm rounded-xl self-end max-w-[85%]">${text}</div>
+    `;
+    input.value = '';
+
+    // Simulate AI parsing and response
+    setTimeout(() => {
+      let filtered = [...restaurants];
+      let reply = `He encontrado varias opciones para "${text}":`;
+
+      const lower = text.toLowerCase();
+      if (lower.includes('ruzafa')) {
+        filtered = filtered.filter(r => r.neighborhood.toLowerCase() === 'ruzafa');
+        reply = `Aquí tienes los mejores locales en Ruzafa:`;
+      } else if (lower.includes('carmen') || lower.includes('ciutat vella')) {
+        filtered = filtered.filter(r => r.neighborhood.toLowerCase().includes('carmen') || r.neighborhood.toLowerCase().includes('ciutat vella'));
+        reply = `Locales tradicionales en el casco histórico:`;
+      } else if (lower.includes('paella') || lower.includes('arroz')) {
+        filtered = filtered.filter(r => r.type === 'Arrocería' || r.specialty.toLowerCase().includes('paella') || r.specialty.toLowerCase().includes('arroz'));
+        reply = `Arrocerías y paellas destacadas en València:`;
+      } else if (lower.includes('menos de')) {
+        filtered = filtered.filter(r => r.price <= 15);
+        reply = `Opciones económicas por menos de 15€:`;
+      }
+
+      chatContainer.innerHTML += `
+        <div class="bg-surface-container p-space-sm rounded-xl text-on-surface self-start max-w-[85%]">${reply} (${filtered.length} resultados)</div>
+      `;
+      chatContainer.scrollTop = chatContainer.scrollHeight;
+
+      renderRestaurants(filtered);
+      renderMapPins(filtered);
+    }, 500);
+  }
+
+  function applyManualFilters() {
+    const maxPrice = parseInt(document.getElementById('filter-price').value);
+    const maxDist = parseFloat(document.getElementById('filter-dist').value);
+    const minRating = parseFloat(document.getElementById('filter-rating').value);
+
+    document.getElementById('val-price').innerText = maxPrice + '€';
+    document.getElementById('val-dist').innerText = maxDist + ' km';
+
+    let filtered = restaurants.filter(r => {
+      const matchCat = activeCategory === 'todos' || r.type === activeCategory;
+      return matchCat && r.price <= maxPrice && r.dist <= maxDist && r.rating >= minRating;
+    });
+
+    renderRestaurants(filtered);
+    renderMapPins(filtered);
+  }
+
+  function filterCategory(cat) {
+    activeCategory = cat;
+    document.querySelectorAll('.category-chip').forEach(btn => {
+      if (btn.innerText.toLowerCase() === cat.toLowerCase() || (cat === 'todos' && btn.innerText === 'Todos')) {
+        btn.classList.remove('bg-surface-container', 'text-on-surface');
+        btn.classList.add('bg-primary', 'text-on-primary');
+      } else {
+        btn.classList.remove('bg-primary', 'text-on-primary');
+        btn.classList.add('bg-surface-container', 'text-on-surface');
+      }
+    });
+    applyManualFilters();
+  }
+
+  function resetFilters() {
+    document.getElementById('filter-price').value = 40;
+    document.getElementById('filter-dist').value = 10;
+    document.getElementById('filter-rating').value = 0;
+    activeCategory = 'todos';
+    filterCategory('todos');
+  }
+</script></main></div></body></html>
